@@ -1,0 +1,21 @@
+#
+# Optional Volumes:
+#
+openerp:
+    build: .
+    links: 
+        - db
+    ports: 
+        - "8069:8069"
+    
+#docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name db postgres
+db:
+    image: postgres
+    environment:
+        - POSTGRES_USER=openerp
+        - POSTGRES_PASSWORD=openerp
+    volumes:
+        - "emsym.dump:/emsym.dump"
+#        - "dbms:/var/lib/mysql"
+
+
