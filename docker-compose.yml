@@ -14,8 +14,7 @@ db:
     environment:
         - POSTGRES_USER=openerp
         - POSTGRES_PASSWORD=openerp
-    volumes:
-        - "emsym.dump:/emsym.dump"
+#    volumes:
 #        - "dbms:/var/lib/mysql"
 
 
