@@ -6,6 +6,7 @@ RUN echo deb http://nightly.odoo.com/7.0/nightly/deb/ ./ \
     > /etc/apt/sources.list.d/openerp-70.list 
 ENV DEBIAN_FRONTEND noninteractive 
 ENV LANG en_US.UTF-8 
+RUN sed -i 's/archive.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list 
 RUN apt-get update 
 RUN apt-get install -y --allow-unauthenticated openerp 
 RUN apt-get install -y git 
