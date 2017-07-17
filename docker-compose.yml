@@ -10,9 +10,9 @@ openerp:
     
 #docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --name db postgres
 db:
-    image: postgres
+    image: postgres:9.5-alpine
     environment:
-        - POSTGRES_USER=openerp
+        - POSTGRES_USER=odoo
         - POSTGRES_PASSWORD=openerp
 #    volumes:
 #        - "dbms:/var/lib/mysql"
